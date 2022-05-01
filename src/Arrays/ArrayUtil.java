@@ -9,24 +9,32 @@ public class ArrayUtil {
         System.out.println();
     }
 
-    public void arrayDemo(){
-        int[] someArray = new int[5];
+    public static int[] createArray(){
+        int[] arr = {2, 5, 7 ,3, 9, 15, 32, 0};
+        return arr;
+    }
 
-        someArray[0] = 5;
-        someArray[1] = 10;
-        someArray[2] = 15;
-        someArray[3] = 20;
-        someArray[4] = 25;
-
-        //someArray[7] = 19;
-        printArray(someArray);
-
-        int[] arr = {1, 6, 9, 10};
-        printArray(arr);
+    public static int[] removeEvenIntegers(int[] arr){
+        int n = arr.length;
+        int oddCount = 0;
+        for (int i = 0; i < n; i++){
+            if(arr[i] % 2 != 0){
+                oddCount++;
+            }
+        }
+        int[] result = new int[oddCount];
+        int idx = 0;
+        for (int i = 0; i < n; i++){
+            if(arr[i] % 2 !=0 ){
+                result[idx++] = arr[i];
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) {
-        ArrayUtil arrUtil = new ArrayUtil();
-        arrUtil.arrayDemo();
+        ArrayUtil arr = new ArrayUtil();
+        int[] result = arr.removeEvenIntegers(arr.createArray());
+        arr.printArray(result);
     }
 }

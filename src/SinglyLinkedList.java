@@ -124,6 +124,22 @@ public class SinglyLinkedList {
         }
         return false;
     }
+
+    public ListNode reverse(ListNode head){
+        if(head == null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+        while (current !=null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
     public static void main(String[] args) {
         ListNode head = new ListNode(10);
         ListNode second = new ListNode(1);
@@ -134,13 +150,5 @@ public class SinglyLinkedList {
         head.next = second; // 10 --> 1
         second.next = third; // 10 --> 1 --> 8
         third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
-
-        SinglyLinkedList newList = new SinglyLinkedList();
-
-        if(newList.find(head, 10)){
-            System.out.println(("Search key found "));
-        }else {
-            System.out.println(("Search key not found "));
-        }
     }
 }

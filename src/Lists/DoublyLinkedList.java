@@ -29,6 +29,18 @@ public class DoublyLinkedList {
         return  length;
     }
 
+    public void insertFirst(int value){
+        ListNode newNode = new ListNode(value);
+        if(isEmpty()){
+            tail = newNode;
+        }else {
+            head.previous = newNode;
+        }
+        newNode.next = head;
+        head = newNode;
+        length++;
+    }
+
     public void insertLast(int value){
         ListNode newNode = new ListNode(value);
         if(isEmpty()){
@@ -71,6 +83,7 @@ public class DoublyLinkedList {
         dll.insertLast(10);
         dll.insertLast(15);
         dll.insertLast(25);
+        dll.insertFirst(90);
 
         dll.displayForward();
         dll.displayBackwards();

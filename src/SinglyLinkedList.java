@@ -154,6 +154,32 @@ public class SinglyLinkedList {
         return slowPtr;
     }
 
+    public ListNode getNthNodeFromEnd(int n){
+        if(head == null){
+            return null;
+        }
+        if(n== 0){
+            throw new IllegalArgumentException("Ivalued value n= " + n);
+        }
+        ListNode mainPtr = head;
+        ListNode refPtr = head;
+
+        int count = 0;
+        while (count < n){
+            if (refPtr == null){
+                throw new IllegalArgumentException(n + "is > number of nodes in list");
+            }
+            refPtr = refPtr.next;
+            count++;
+        }
+
+        while (refPtr !=null){
+            refPtr = refPtr.next;
+            mainPtr = mainPtr.next;
+        }
+        return mainPtr;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(10);
         ListNode second = new ListNode(1);

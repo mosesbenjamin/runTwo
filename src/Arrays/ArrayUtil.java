@@ -52,11 +52,29 @@ public class ArrayUtil {
         return min;
     }
 
+    public int findSecondMax(int[] arr){
+        int n = arr.length;
+        if(arr == null || n==0){
+            throw new IllegalArgumentException("Invalid input");
+        }
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+        for(int i = 0; i < n; i++){
+            if(arr[i] > max){
+                secondMax = max;
+                max = arr[i];
+            }else if( arr[i]> secondMax && arr[i] != max){
+                secondMax = arr[i];
+            }
+        }
+        return secondMax;
+    }
+
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
         int[] arr = {35, 6, 8, 23};
         arrayUtil.printArray(arr);
-        int result = arrayUtil.findMinimum(arr);
+        int result = arrayUtil.findSecondMax(arr);
         System.out.println(result);
     }
 }

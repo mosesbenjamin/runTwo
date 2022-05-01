@@ -96,6 +96,22 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public ListNode deleteLast(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        ListNode temp = tail;
+        if(head == tail){
+            head = null;
+        }else {
+            tail.previous.next = null;
+        }
+        tail = tail.previous;
+        temp.previous = null;
+        length--;
+        return temp;
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
         dll.insertLast(1);
@@ -103,9 +119,9 @@ public class DoublyLinkedList {
         dll.insertLast(15);
         dll.insertLast(25);
         dll.insertFirst(90);
-        dll.deleteFirst();
 
         dll.displayForward();
+        dll.deleteFirst();
         dll.displayBackwards();
     }
 }

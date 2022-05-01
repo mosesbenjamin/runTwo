@@ -99,11 +99,20 @@ public class ArrayUtil {
         return temp;
     }
 
+    public int findMissingNumber(int[] arr){
+        int n = arr.length + 1;
+        int sum = n * (n + 1)/2;
+        for (int num: arr){
+            sum = sum - num;
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
-        int[] arr = {0, 35, 0, 6, 6, 0, 8, 23};
+        int[] arr = {1,2,3,4,5,7};
         arrayUtil.printArray(arr);
-        int[] result = arrayUtil.resize(arr, 15);
-        arrayUtil.printArray(result);
+        int result = arrayUtil.findMissingNumber(arr);
+        System.out.println(result);
     }
 }

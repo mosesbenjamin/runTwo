@@ -89,11 +89,21 @@ public class ArrayUtil {
         return  arr;
     }
 
+    public int[] resize(int[] arr, int capacity){
+        int n = arr.length;
+        int[] temp = new int[capacity];
+        for (int i = 0; i <n; i++){
+            temp[i] = arr[i];
+        }
+        arr = temp;
+        return temp;
+    }
+
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
         int[] arr = {0, 35, 0, 6, 6, 0, 8, 23};
         arrayUtil.printArray(arr);
-        int[] result = arrayUtil.moveZeroes(arr);
+        int[] result = arrayUtil.resize(arr, 15);
         arrayUtil.printArray(result);
     }
 }

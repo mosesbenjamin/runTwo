@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbd5e805-a524-4a1c-a9a3-617c0bb5ba41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Stacks/StringReverse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Stacks/NextGreaterElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.StringReverse">
+  <component name="RunManager" selected="Application.NextGreaterElement">
     <configuration name="ArrayUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Arrays.ArrayUtil" />
       <module name="runTwo" />
@@ -65,12 +65,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lists.DoublyLinkedList" />
+    <configuration name="NextGreaterElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stacks.NextGreaterElement" />
       <module name="runTwo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lists.*" />
+          <option name="PATTERN" value="Stacks.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NextGreaterElement" />
         <item itemvalue="Application.StringReverse" />
         <item itemvalue="Application.Stack" />
         <item itemvalue="Application.ArrayUtil" />
         <item itemvalue="Application.CircularSinglyLinkedList" />
-        <item itemvalue="Application.DoublyLinkedList" />
       </list>
     </recent_temporary>
   </component>

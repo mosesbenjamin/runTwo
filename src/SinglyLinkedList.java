@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class SinglyLinkedList {
     private ListNode head;
 
@@ -69,6 +71,16 @@ public class SinglyLinkedList {
         }
         current.next = newNode;
     }
+
+    public ListNode deleteFirst(){
+        if(head == null){
+            return null;
+        }
+        ListNode temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.head = new ListNode(10);
@@ -82,6 +94,8 @@ public class SinglyLinkedList {
         third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
 
         sll.insert(5, 14);
+        sll.display();
+        sll.deleteFirst();
         sll.display();
     }
 }

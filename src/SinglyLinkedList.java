@@ -127,7 +127,7 @@ public class SinglyLinkedList {
 
     public ListNode reverse(ListNode head){
         if(head == null){
-            return head;
+            return null;
         }
         ListNode current = head;
         ListNode previous = null;
@@ -185,7 +185,7 @@ public class SinglyLinkedList {
             return;
         }
         ListNode current = head;
-        while (current != null %% current.next != null){
+        while (current != null && current.next != null){
             if (current.data == current.next.data){
                 current.next = current.next.next;
             } else {
@@ -194,24 +194,48 @@ public class SinglyLinkedList {
         }
     }
 
+    public ListNode insertIntoSortedList(int value){
+        ListNode newNode = new ListNode(value);
+        if(head == null){
+            return newNode;
+        }
+        ListNode current = head;
+        ListNode temp = null;
+        while (current !=null && current.data < newNode.data){
+            temp = current;
+            current = current.next;
+        }
+        newNode.next = current;
+        temp.next = newNode;
+        return head;
+    }
+
+    public void deletNode(int key){
+        ListNode current = head;
+        ListNode temp = null;
+        if(current !=null && current.data ==key){
+            head = current.next;
+            return;
+        }
+        if(current !=null && current.data !=key){
+            temp = current;
+            current = current.next;
+        }
+        if(current == null) {
+            return;
+        }
+        temp.next = current.next;
+    }
+
     public static void main(String[] args) {
-        ListNode head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(11);
 
-        // connect to form a chain
-        head.next = second; // 10 --> 1
-        second.next = third; // 10 --> 1 --> 8
-        third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
+        SinglyLinkedList someNode = new SinglyLinkedList();
+        someNode.insertFirst(10);
+        someNode.insertFirst(20);
+        someNode.insertFirst(45);
 
-//        SinglyLinkedList someNode = new SinglyLinkedList();
-//        someNode.insertFirst(10);
-//        someNode.insertFirst(18);
-//        someNode.insertFirst(32);
-//
-//        someNode.display();
-//        ListNode middleNode = someNode.getMiddleNode();
-//        System.out.println(middleNode);
+        someNode.display();
+        someNode.deletNode(20);
+        someNode.display();
     }
 }

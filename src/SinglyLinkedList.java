@@ -279,11 +279,34 @@ public class SinglyLinkedList {
         return temp;
     }
 
+    public void removeLoop(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while(fastPtr !=null && fastPtr.next !=null){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if(slowPtr == fastPtr){
+                removeLoop(slowPtr);
+                return;
+            }
+        }
+    }
+
+    private void removeLoop(ListNode slowPtr) {
+        ListNode temp = head;
+        while(slowPtr.next != temp.next){
+            slowPtr = slowPtr.next;
+            temp = temp.next;
+        }
+        slowPtr.next = null;
+    }
     public static void main(String[] args) {
 
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.createALoopInLinkedList();
         System.out.println(singlyLinkedList.containsLoop());
         System.out.println(singlyLinkedList.startNodeInALoop().data);
+        singlyLinkedList.removeLoop();
+        singlyLinkedList.display();
     }
 }

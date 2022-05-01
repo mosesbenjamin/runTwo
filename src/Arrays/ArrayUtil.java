@@ -9,11 +9,6 @@ public class ArrayUtil {
         System.out.println();
     }
 
-    public static int[] createArray(){
-        int[] arr = {2, 5, 7 ,3, 9, 15, 32, 0};
-        return arr;
-    }
-
     public int[] removeEvenIntegers(int[] arr){
         int n = arr.length;
         int oddCount = 0;
@@ -43,13 +38,25 @@ public class ArrayUtil {
         return numbers;
     }
 
+    public int findMinimum(int[] arr){
+        int n = arr.length;
+        if(arr == null || n == 0){
+            throw new IllegalArgumentException("Invalid input");
+        }
+        int min = arr[0];
+        for (int i = 1; i < n; i++){
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
     public static void main(String[] args) {
-        ArrayUtil arr = new ArrayUtil();
-        int[] newArray = arr.createArray();
-        arr.printArray(newArray);
-        int start = 0;
-        int end = newArray.length-1;
-        int[] result = arr.reverseArray(newArray, start, end );
-        arr.printArray(result);
+        ArrayUtil arrayUtil = new ArrayUtil();
+        int[] arr = {35, 6, 8, 23};
+        arrayUtil.printArray(arr);
+        int result = arrayUtil.findMinimum(arr);
+        System.out.println(result);
     }
 }

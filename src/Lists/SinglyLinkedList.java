@@ -1,3 +1,5 @@
+package Lists;
+
 import java.util.List;
 
 public class SinglyLinkedList {

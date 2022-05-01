@@ -70,11 +70,30 @@ public class ArrayUtil {
         return secondMax;
     }
 
+    public int[] moveZeroes(int[] arr){
+        int n = arr.length;
+        if(arr == null || n==0){
+            throw new IllegalArgumentException("Invalid input");
+        }
+        int j = 0;
+        for (int i = 0; i < n; i++){
+            if(arr[i] !=0 && arr[j] == 0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            if(arr[j] !=0){
+                j++;
+            }
+        }
+        return  arr;
+    }
+
     public static void main(String[] args) {
         ArrayUtil arrayUtil = new ArrayUtil();
-        int[] arr = {35, 6, 8, 23};
+        int[] arr = {0, 35, 0, 6, 6, 0, 8, 23};
         arrayUtil.printArray(arr);
-        int result = arrayUtil.findSecondMax(arr);
-        System.out.println(result);
+        int[] result = arrayUtil.moveZeroes(arr);
+        arrayUtil.printArray(result);
     }
 }

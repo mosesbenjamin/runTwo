@@ -140,6 +140,20 @@ public class SinglyLinkedList {
         }
         return previous;
     }
+
+    public ListNode getMiddleNode(){
+        if(head == null){
+            return null;
+        }
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+        while (fastPtr != null && fastPtr.next != null){
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+        }
+        return slowPtr;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(10);
         ListNode second = new ListNode(1);
@@ -150,5 +164,14 @@ public class SinglyLinkedList {
         head.next = second; // 10 --> 1
         second.next = third; // 10 --> 1 --> 8
         third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
+
+//        SinglyLinkedList someNode = new SinglyLinkedList();
+//        someNode.insertFirst(10);
+//        someNode.insertFirst(18);
+//        someNode.insertFirst(32);
+//
+//        someNode.display();
+//        ListNode middleNode = someNode.getMiddleNode();
+//        System.out.println(middleNode);
     }
 }

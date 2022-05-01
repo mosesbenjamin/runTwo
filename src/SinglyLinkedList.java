@@ -32,19 +32,27 @@ public class SinglyLinkedList {
         }
         return count;
     }
+
+    public void insertFirst(int value){
+        ListNode newNode = new ListNode(value);
+        newNode.next = head;
+        head = newNode;
+    }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
-        sll.head = new ListNode(10);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(8);
-        ListNode fourth = new ListNode(11);
+//        sll.head = new ListNode(10);
+//        ListNode second = new ListNode(1);
+//        ListNode third = new ListNode(8);
+//        ListNode fourth = new ListNode(11);
+//
+//        // connect to form a chain
+//        sll.head.next = second; // 10 --> 1
+//        second.next = third; // 10 --> 1 --> 8
+//        third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
 
-        // connect to form a chain
-        sll.head.next = second; // 10 --> 1
-        second.next = third; // 10 --> 1 --> 8
-        third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
-
+        sll.insertFirst(11);
+        sll.insertFirst(8);
+        sll.insertFirst(1);
         sll.display();
-        System.out.println("Length is " + sll.length());
     }
 }

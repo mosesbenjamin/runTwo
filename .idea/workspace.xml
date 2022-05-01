@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbd5e805-a524-4a1c-a9a3-617c0bb5ba41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Lists/DoublyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lists/SinglyLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SinglyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lists/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lists/DoublyLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,20 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Lists.SinglyLinkedList">
+  <component name="RunManager" selected="Application.DoublyLinkedList">
+    <configuration name="DoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lists.DoublyLinkedList" />
+      <module name="runTwo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lists.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Lists.SinglyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lists.SinglyLinkedList" />
       <module name="runTwo" />
@@ -63,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DoublyLinkedList" />
         <item itemvalue="Application.Lists.SinglyLinkedList" />
       </list>
     </recent_temporary>

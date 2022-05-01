@@ -301,7 +301,7 @@ public class SinglyLinkedList {
         slowPtr.next = null;
     }
 
-    public ListNode merge(ListNode a, ListNode b){
+    public ListNode mergeTwoSortedLists(ListNode a, ListNode b){
         ListNode dummy = new ListNode(0); // for returning the merged sorted list and to avoid null pointer exceptions
         ListNode tail = dummy;
         while(a != null && b!=null){
@@ -321,25 +321,50 @@ public class SinglyLinkedList {
         }
         return dummy.next;
     }
+
+    public ListNode addTwoNumbers(ListNode a, ListNode b){
+        ListNode dummyHead = new ListNode(0);
+        ListNode tail = dummyHead;
+
+        int carry = 0;
+        while (a !=null || b !=null){
+            int x = (a !=null) ? a.data : 0;
+            int y = (b !=null) ? b.data: 0;
+            int sum = x + y + carry;
+            carry = sum/10;
+            tail.next = new ListNode(sum % 10);
+            tail = tail.next;
+            if(a != null)  a = a.next;
+            if(b !=null) b = b.next;
+        }
+        if(carry > 0){
+            tail.next = new ListNode(carry);
+        }
+        return dummyHead.next;
+    }
     public static void main(String[] args) {
 
         SinglyLinkedList a = new SinglyLinkedList();
         a.insertLast(3);
+        a.insertLast(7);
         a.insertLast(9);
-        a.insertLast(18);
 
         SinglyLinkedList b = new SinglyLinkedList();
-        b.insertLast(7);
+        b.insertLast(1);
+        b.insertLast(2);
+        b.insertLast(3);
+        b.insertLast(5);
         b.insertLast(8);
-        b.insertLast(9);
-        b.insertLast(15);
-        b.insertLast(21);
 
         a.display();
         b.display();
 
         SinglyLinkedList result = new SinglyLinkedList();
-        result.head = result.merge(a.head, b.head);
+//        result.head = result.mergeTwoSortedLists(a.head, b.head);
+//        result.display();
+        result.head = result.addTwoNumbers(a.head, b.head);
+        result.display();
+        result.head = result.reverse(result.head);
         result.display();
     }
 }

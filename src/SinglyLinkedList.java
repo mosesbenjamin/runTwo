@@ -39,6 +39,24 @@ public class SinglyLinkedList {
         head = newNode;
     }
 
+    public void insert(int position, int value){
+        ListNode node = new ListNode(value);
+        if(position == 1){
+            node.next = head;
+            head = node;
+        } else {
+            ListNode previous = head;
+            int count = 1;
+            while(count < position - 1){
+                previous = previous.next;
+                count++;
+            }
+            ListNode current = previous.next;
+            previous.next = node;
+            node.next = current;
+        }
+    }
+
     public void insertLast(int value){
         ListNode newNode = new ListNode(value);
         if(head ==null){
@@ -53,19 +71,17 @@ public class SinglyLinkedList {
     }
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
-//        sll.head = new ListNode(10);
-//        ListNode second = new ListNode(1);
-//        ListNode third = new ListNode(8);
-//        ListNode fourth = new ListNode(11);
-//
-//        // connect to form a chain
-//        sll.head.next = second; // 10 --> 1
-//        second.next = third; // 10 --> 1 --> 8
-//        third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
+        sll.head = new ListNode(10);
+        ListNode second = new ListNode(1);
+        ListNode third = new ListNode(8);
+        ListNode fourth = new ListNode(11);
 
-        sll.insertLast(11);
-        sll.insertLast(8);
-        sll.insertLast(1);
+        // connect to form a chain
+        sll.head.next = second; // 10 --> 1
+        second.next = third; // 10 --> 1 --> 8
+        third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
+
+        sll.insert(5, 14);
         sll.display();
     }
 }

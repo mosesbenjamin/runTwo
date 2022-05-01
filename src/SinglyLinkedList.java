@@ -257,10 +257,33 @@ public class SinglyLinkedList {
         sixth.next = third;
     }
 
+    public ListNode startNodeInALoop(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while(fastPtr !=null && fastPtr.next !=null){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if(slowPtr == fastPtr){
+                return getStartingNode(slowPtr);
+            }
+        }
+        return null;
+    }
+
+    private ListNode getStartingNode(ListNode slowPtr) {
+        ListNode temp = head;
+        while(slowPtr != temp){
+            slowPtr = slowPtr.next;
+            temp = temp.next;
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
 
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.createALoopInLinkedList();
         System.out.println(singlyLinkedList.containsLoop());
+        System.out.println(singlyLinkedList.startNodeInALoop().data);
     }
 }

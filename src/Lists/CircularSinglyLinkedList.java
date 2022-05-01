@@ -63,10 +63,24 @@ public class CircularSinglyLinkedList {
         length++;
     }
 
+    public void insertLast(int value){
+        ListNode temp = new ListNode(value);
+        if(last == null){
+            last = temp;
+            last.next = last;
+        }else {
+            temp.next = last.next;
+            last.next = temp;
+            last = temp;
+        }
+        length++;
+    }
+
     public static void main(String[] args) {
         CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
         csll.insertFirst(3);
         csll.insertFirst(11);
+        csll.insertLast(24);
         csll.display();
     }
 }

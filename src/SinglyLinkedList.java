@@ -110,21 +110,37 @@ public class SinglyLinkedList {
         previous.next = null;
         return current;
     }
+
+    public boolean find(ListNode head, int searchKey){
+        if(head ==null){
+            return  false;
+        }
+        ListNode current = head;
+        while(current!=null){
+            if(current.data == searchKey){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList();
-        sll.head = new ListNode(10);
+        ListNode head = new ListNode(10);
         ListNode second = new ListNode(1);
         ListNode third = new ListNode(8);
         ListNode fourth = new ListNode(11);
 
         // connect to form a chain
-        sll.head.next = second; // 10 --> 1
+        head.next = second; // 10 --> 1
         second.next = third; // 10 --> 1 --> 8
         third.next = fourth; // 10 --> 1 -->8 --> 11 --> null
 
-        sll.insert(5, 14);
-        sll.display();
-        sll.delete(3);
-        sll.display();
+        SinglyLinkedList newList = new SinglyLinkedList();
+
+        if(newList.find(head, 10)){
+            System.out.println(("Search key found "));
+        }else {
+            System.out.println(("Search key not found "));
+        }
     }
 }

@@ -210,7 +210,7 @@ public class SinglyLinkedList {
         return head;
     }
 
-    public void deletNode(int key){
+    public void deleteNode(int key){
         ListNode current = head;
         ListNode temp = null;
         if(current !=null && current.data ==key){
@@ -300,13 +300,46 @@ public class SinglyLinkedList {
         }
         slowPtr.next = null;
     }
+
+    public ListNode merge(ListNode a, ListNode b){
+        ListNode dummy = new ListNode(0); // for returning the merged sorted list and to avoid null pointer exceptions
+        ListNode tail = dummy;
+        while(a != null && b!=null){
+            if(a.data <= b.data){
+                tail.next = a;
+                a = a.next;
+            }else{
+                tail.next = b;
+                b = b.next;
+            }
+            tail = tail.next;
+        }
+        if(a == null){
+            tail.next = b;
+        }else{
+            tail.next = a;
+        }
+        return dummy.next;
+    }
     public static void main(String[] args) {
 
-        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-        singlyLinkedList.createALoopInLinkedList();
-        System.out.println(singlyLinkedList.containsLoop());
-        System.out.println(singlyLinkedList.startNodeInALoop().data);
-        singlyLinkedList.removeLoop();
-        singlyLinkedList.display();
+        SinglyLinkedList a = new SinglyLinkedList();
+        a.insertLast(3);
+        a.insertLast(9);
+        a.insertLast(18);
+
+        SinglyLinkedList b = new SinglyLinkedList();
+        b.insertLast(7);
+        b.insertLast(8);
+        b.insertLast(9);
+        b.insertLast(15);
+        b.insertLast(21);
+
+        a.display();
+        b.display();
+
+        SinglyLinkedList result = new SinglyLinkedList();
+        result.head = result.merge(a.head, b.head);
+        result.display();
     }
 }

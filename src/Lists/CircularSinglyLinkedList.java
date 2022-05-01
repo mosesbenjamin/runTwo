@@ -52,9 +52,21 @@ public class CircularSinglyLinkedList {
         System.out.print(first.data);
     }
 
+    public void insertFirst(int value){
+        ListNode temp = new ListNode(value);
+        if(last == null){
+            last = temp;
+        }else {
+            temp.next = last.next;
+        }
+        last.next = temp;
+        length++;
+    }
+
     public static void main(String[] args) {
         CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
-        csll.createCircularSinglyLinkedList();
+        csll.insertFirst(3);
+        csll.insertFirst(11);
         csll.display();
     }
 }

@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import com.sun.source.tree.Tree;
+
 public class BinaryTree {
     private TreeNode root;
 
@@ -44,9 +46,18 @@ public class BinaryTree {
         inOrder(root.right);
     }
 
+    public void postOrder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
-        bt.inOrder(bt.root);
+        bt.postOrder(bt.root);
     }
 }

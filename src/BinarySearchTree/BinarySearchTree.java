@@ -1,7 +1,5 @@
 package BinarySearchTree;
 
-import BinaryTree.BinaryTree;
-
 public class BinarySearchTree {
     private TreeNode root;
 

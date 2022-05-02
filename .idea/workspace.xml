@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbd5e805-a524-4a1c-a9a3-617c0bb5ba41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Matrix/SortedMatrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Matrix/SpiralMatrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BinarySearchTree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree/BinarySearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SortedMatrix">
+  <component name="RunManager" selected="Application.SpiralMatrix">
     <configuration name="BinarySearchTree.BinarySearchTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BinarySearchTree.BinarySearchTree" />
       <module name="runTwo" />
@@ -99,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringReverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Stacks.StringReverse" />
+    <configuration name="SpiralMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Matrix.SpiralMatrix" />
       <module name="runTwo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Stacks.*" />
+          <option name="PATTERN" value="Matrix.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpiralMatrix" />
         <item itemvalue="Application.SortedMatrix" />
         <item itemvalue="Application.BinarySearchTree.BinarySearchTree" />
         <item itemvalue="Application.BinaryTree" />
         <item itemvalue="Application.NextGreaterElement" />
-        <item itemvalue="Application.StringReverse" />
       </list>
     </recent_temporary>
   </component>

@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbd5e805-a524-4a1c-a9a3-617c0bb5ba41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Coding/ValidSubSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Coding/FirstNonRepeatingCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ValidSubSequence">
+  <component name="RunManager" selected="Application.FirstNonRepeatingCharacter">
     <configuration name="BottomUpApproachFibonacci" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicProgramming.BottomUpApproachFibonacci" />
       <module name="runTwo" />
@@ -51,12 +52,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassicFibonacciNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DynamicProgramming.ClassicFibonacciNumber" />
+    <configuration name="FirstNonRepeatingCharacter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Coding.FirstNonRepeatingCharacter" />
       <module name="runTwo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="DynamicProgramming.*" />
+          <option name="PATTERN" value="Coding.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FirstNonRepeatingCharacter" />
         <item itemvalue="Application.ValidSubSequence" />
         <item itemvalue="Application.TwoSum" />
         <item itemvalue="Application.KadaneAlgorithm" />
         <item itemvalue="Application.BottomUpApproachFibonacci" />
-        <item itemvalue="Application.ClassicFibonacciNumber" />
       </list>
     </recent_temporary>
   </component>
